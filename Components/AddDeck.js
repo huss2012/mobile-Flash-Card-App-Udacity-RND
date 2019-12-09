@@ -41,7 +41,7 @@ class AddDeck extends Component {
              }
          }
          this.props.addDeck(deckObject)
-         this.props.navigation.navigate('AddCard', {deck:this.state.titleOfADeck})
+         this.props.navigation.navigate('SingleDeck', {deck:this.state.titleOfADeck})
          this.setState(() => ({
             titleOfADeck: ''
          }))

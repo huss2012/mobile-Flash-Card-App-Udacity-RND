@@ -56,7 +56,8 @@ const Result = (props) => (
  	correct = () => {
  		this.setState({
       correctAnsweres: this.state.correctAnsweres+1,
-      currentCard: this.state.currentCard + 1
+      currentCard: this.state.currentCard + 1,
+      view: 'front',
     })
  
  		if (this.state.currentCard === (this.props.cards.length-1))
@@ -70,7 +71,8 @@ const Result = (props) => (
 
  	false = () => {
  		this.setState({
-      currentCard: this.state.currentCard + 1
+      currentCard: this.state.currentCard + 1,
+      view: 'front',
     })
 
    if (this.state.currentCard === (this.props.cards.length-1))
