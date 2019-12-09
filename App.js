@@ -14,6 +14,7 @@ import Constants from 'expo-constants'
 import AddCard from './Components/AddCard'
 import SingleDeck from './Components/SingleDeck'
 import Quiz from './Components/Quiz'
+import { setLocalNotification, clearLocalNotification } from './utils/notifications'
 
 
 AppStatusBar = ({backgroundColor, ...props}) => {
@@ -89,6 +90,10 @@ const MainNavigator = createAppContainer(createStackNavigator({
 }))
 
 export default class App extends React.Component{
+  componentDidMount(){
+    clearLocalNotification()
+    .then(setLocalNotification)
+  }
   render(){
     return (
       <Provider store={createStore(decks, {}, applyMiddleware(ReduxThunk))}>
